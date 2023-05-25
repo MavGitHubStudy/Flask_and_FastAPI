@@ -12,17 +12,26 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    context = {
+        'title': 'task_01',
+    }
+    return render_template('index.html', **context)
 
 
 @app.route('/about/')
 def about():
-    return render_template('about.html')
+    context = {
+        'title': 'task_01',
+    }
+    return render_template('about.html', **context)
 
 
 @app.route('/contacts/')
 def contacts():
-    return render_template('contacts.html')
+    context = {
+        'title': 'task_01',
+    }
+    return render_template('contacts.html', **context)
 
 
 @app.route('/hello/')

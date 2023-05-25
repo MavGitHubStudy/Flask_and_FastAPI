@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
-
+{% block title %} {{title}} - Главная{% endblock %}
 {% block content %}
-  <h1>{% block title %}Главная{% endblock %}</h1>
+  <h1>Главная</h1>
   <br>
   <div class="container">
+    <!--
     <a class="btn" href="{{ url_for('hello') }}">Нажми меня</a>
+    -->
+    <a class="btn" href="/hello/">Нажми меня</a><br>
   </div>
 {% endblock %}

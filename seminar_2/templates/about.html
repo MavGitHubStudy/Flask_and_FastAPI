@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
+{% block title %}{{ title }} - О нас{% endblock %}
 {% block content %}
-<h1>{% block title %}О нас{% endblock %}</h1>
+<h1>О нас</h1>
 <br>
 <p>
-  The <strong>task_01</strong> is a Flask web
+  The <strong>{{ title }}</strong> is a Flask web
   application
   written in Python.
 </p>

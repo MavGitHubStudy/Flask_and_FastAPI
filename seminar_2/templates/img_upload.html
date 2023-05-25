@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }} - Upload image{% endblock %}
+{% block content %}
+<img src="{{ url_for('static', filename='image/forum.jpg') }}"
+     alt="Римский форум" width="300px" height="auto"><br><br>
+<a href="/upload/">Upload image</a>
+{% endblock %}
+
