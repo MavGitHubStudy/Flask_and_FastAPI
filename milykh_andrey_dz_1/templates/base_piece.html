@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/base_piece.css">
+    <link rel="stylesheet" href="../static/css/index_piece.css" />
+    <link rel="stylesheet" href="../static/css/about_piece.css">
+    <link rel="stylesheet" href="../static/css/contacts_piece.css">
+    <title>
+      {% block title %} {% endblock %} - task_08
+    </title>
+  </head>
+  <body>
+    <div class="wrapper">
+
+      <div class="header">
+        <h1>Базовый шаблон сайта</h1>
+        <div class="menu">
+          <ul>
+            <li><a href="{{ url_for('index') }}">Главная</a></li>
+            <li><a href="{{ url_for('about') }}">О нас</a></li>
+            <li><a href="{{ url_for('contacts') }}">Контакты</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="main">
+        <div class="container">
+          {% block content %} {% endblock %}
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>&copy; Милых А.В., 2023</p>
+      </div>
+
+    </div>
+  </body>
+</html>
