@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<!--  <link rel="stylesheet" href="/static/css/bootstrap.min.css">-->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <title>{{ title }}</title>
+</head>
+<body>
+  <h1 class="text-monospace">Привет, меня зовут {{ name }}</h1>
+<!--  <img src="/static/image/venice.jgp" alt="Фото Венеции" width="300">-->
+  <img src="{{ url_for('static', filename='image/venice.jpg') }}" alt="Фото Венеции" width="300">
+  <p class="text-body text-justify">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad alias aut consequatur dolor, doloribus labore optio
+    porro. A architecto iusto possimus repellat, repudiandae rerum?</p>
+  <p class="alert-dark">Все права защищены  &copy;</p>
+
+<!--<script src="static/js/bootstrap.bundle.min.js"></script>-->
+  <script src="{{ url_for('static', filename='js/bootsrap.bundle.min.js') }}"></script>
+
+</body>
+</html>
