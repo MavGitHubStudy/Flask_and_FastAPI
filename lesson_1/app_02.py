@@ -1,0 +1,19 @@
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return 'Привет, незнакомец!'
+
+@app.route('/Николай/')  # / лучше всегда указывать в конце!
+def nike():
+    return 'Привет, Николай!'
+
+@app.route('/Иван/')
+def ivan():
+    return 'Привет, Ванечка!'
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
