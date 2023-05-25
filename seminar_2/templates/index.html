@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{% block title %}Главная{% endblock %}</h1>
+  <br>
+  <div class="container">
+    <a class="btn" href="{{ url_for('hello') }}">Нажми меня</a>
+  </div>
+{% endblock %}
