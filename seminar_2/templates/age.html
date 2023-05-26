@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %} {{ title }} - age{% endblock %}
+{% block content %}
+  <h1>Имя и возраст пользователя</h1>
+  <form method="post">
+    <label for="user_name">
+      Имя пользователя:
+      <input type="text" name="user_name" placeholder="Имя" required>
+    </label>
+    <label for="user_age">
+      Возраст пользователя:
+      <input type="text" name="user_age" placeholder="Возраст" required>
+    </label><br>
+    <input type="submit" value="Отправить">
+  </form>
+{% endblock %}

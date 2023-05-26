@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %} {{ title }} - сообщение{% endblock %}
+{% block content %}
+  <h1>Подсчёт количества слов в тексте</h1>
+  <br>
+  <form method="post">
+    <div class="message">
+      <label for="text">Поле ввода сообщения для отправки:</label><br>
+      <textarea rows="10" cols="45" name="text" id="text"
+                placeholder="Введите текст сообщения" required></textarea>
+    </div>
+    <input type="submit" value="Отправить">
+  </form>
+{% endblock %}

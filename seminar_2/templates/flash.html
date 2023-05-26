@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+<form action="/flash/" method="post">
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        {{ message }}
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  <label>Имя:<input type="text" name="user_name" placeholder="Введите имя"></label>
+  <input type="submit" value="Отправить">
+</form>
+{% endblock %}

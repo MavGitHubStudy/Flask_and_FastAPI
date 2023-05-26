@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %} {{ title }} - calc{% endblock %}
+{% block content %}
+  <h1>Простейший калькулятор</h1>
+  <form method="post">
+    <label for="number1">
+      Первое число
+      <input type="text" name="number1" placeholder="Введите число" required>
+    </label>
+    <label for="number2">
+      Второе число
+      <input type="text" name="number2" placeholder="Введите число" required>
+    </label><br>
+    <label for="operations">Choose a mathematical operation:</label>
+    <select name="operations" id="operations">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+    <input type="submit" value="Вычислить">
+  </form>
+{% endblock %}
