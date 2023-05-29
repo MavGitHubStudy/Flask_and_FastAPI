@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+  <h1>Ошибка нахождения страницы</h1>
+  <div class="row">
+    <p>
+      <br><br>
+      Страница &laquo;{{ url  }}&raquo; не найдена.<br><br>
+      <a href="{{ url_for('index') }}">Попробуйте вернуться на главную.</a>
+    </p>
+  </div>
+{% endblock %}

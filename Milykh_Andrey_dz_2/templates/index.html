@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %} {{title}} - Главная{% endblock %}
+{% block content %}
+  <h1>Главная</h1>
+  <br>
+  <div class="container">
+    {%  if title == 'task_07' %}
+      <a href="/square/">Форма ввода числа для получения его квадрата</a>
+    {%  elif title == 'task_09' %}
+      <a href="/email/">Форма ввода имени и электронной почты</a>
+    {%  endif %}
+  </div>
+{% endblock %}
