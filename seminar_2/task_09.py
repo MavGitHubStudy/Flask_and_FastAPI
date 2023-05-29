@@ -240,7 +240,7 @@ def welcome():
 def logout():
     session.pop('user_name', None)
     session.pop('user_email', None)
-    return redirect(url_for('welcome'))
+    return redirect(url_for('email'))
 
 
 if __name__ == "__main__":

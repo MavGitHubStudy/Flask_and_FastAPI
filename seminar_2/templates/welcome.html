@@ -3,9 +3,11 @@
 {% block content %}
   <h1>
     Добро пожаловать, {% block user_name %}
-    {{session['user_name']}}{% endblock %}
+    {{session['user_name']}}{% endblock %}!
   </h1>
-  <form method="post">
-    <input type="submit" value="Выйти">
-  </form>
+  <br><br>
+  <a class="btn" href="{{ url_for('logout') }}">Выйти</a>
+{#  <form method="post">#}
+{#    <input  class="btn" type="submit" value="Выйти">#}
+{#  </form>#}
 {% endblock %}
