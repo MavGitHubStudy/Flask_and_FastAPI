@@ -20,7 +20,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     context = {
-        'title': 'task_06',
+        'title': 'task_07',
     }
     return render_template('index.html', **context)
 
@@ -28,7 +28,7 @@ def index():
 @app.route('/about/')
 def about():
     context = {
-        'title': 'task_06',
+        'title': 'task_07',
     }
     return render_template('about.html', **context)
 
@@ -36,7 +36,7 @@ def about():
 @app.route('/contacts/')
 def contacts():
     context = {
-        'title': 'task_06',
+        'title': 'task_07',
     }
     return render_template('contacts.html', **context)
 
@@ -51,7 +51,7 @@ def hello():
 @app.route('/img_upload/')
 def img_upload():
     context = {
-        'title': 'task_06',
+        'title': 'task_07',
     }
     return render_template('img_upload.html', **context)
 
@@ -64,7 +64,7 @@ def upload():
         file.save(PurePath.joinpath(Path.cwd(), 'uploads', file_name))
         return f"Файл {file_name} загружен на сервер"
     context = {
-        'title': 'task_06',
+        'title': 'task_07',
     }
     return render_template('upload.html', **context)
 
@@ -86,7 +86,7 @@ def login():
         if username in users and password == info[username]:
             return f"Hello,  {username}!"
     context = {
-        'title': 'task_06',
+        'title': 'task_07',
     }
     return render_template('login.html', **context)
 
@@ -99,7 +99,7 @@ def send_text():
         s = " ".join(text.split())
         return f"количество слов: {len(s.split(' '))}!"
     context = {
-        'title': 'task_06',
+        'title': 'task_07',
     }
     return render_template('text.html', **context)
 
@@ -120,7 +120,7 @@ def calc():
         if operation == '/':
             return f'Частное: {number1 / number2}'
     context = {
-        'title': 'task_06',
+        'title': 'task_07',
     }
     return render_template('calc.html', **context)
 
@@ -137,7 +137,7 @@ def age():
             abort(403)
         return f'Имя пользователя: {user_name}, его возраст: {user_age}'
     context = {
-        'title': 'task_06',
+        'title': 'task_07',
     }
     return render_template('age.html', **context)
 
@@ -151,7 +151,31 @@ def not_allowed(e):
     return render_template('403.html', **context), 403
 
 
-# task_07  01:29:00 - пропустили
+# task_07  01:29:00
+@app.route('/square/', methods=['GET', 'POST'])
+def square():
+    context = {
+        'title': 'task_07',
+        'url': 'square',
+        'square_error': 'Неверный формат числа!'
+    }
+    if request.method == 'POST':
+        try:
+            number = float(escape(request.form.get('number')))
+            return f'Квадрат числа {number} равен {number * number}'
+        except ValueError:
+            abort(400)
+    return render_template('square.html', **context)
+
+
+@app.errorhandler(400)
+def bad_request(e):
+    app.logger.warning(e)
+    context = {
+        'title': '400: Плохой запрос',
+        'big_head': 'Плохой запрос'
+    }
+    return render_template('400.html', **context), 400
 
 
 if __name__ == "__main__":
