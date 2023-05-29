@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  /*min-height: 100vh;*/
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.wrapper {
+  /*min-height: 100vh;*/
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #000;
+}
+
+.container {
+  max-width: 1000px;
+  /*padding: 25px 10px;*/
+  margin: 0 auto;
+}
+
+.header {
+  height: 90px;
+  background-color: #0db06e;
+  /* липкий header */
+  position: sticky;
+  top: 0;
+  /* Для старых браузеров */
+  /*position: fixed;*/
+  /*top: 0;*/
+  /*left: 0;*/
+  /*right: 0;*/
+}
+
+.menu {
+  border: 1px solid #000;
+  height: 50px;
+  background: #4c4c4c;
+}
+
+.menu ul {
+  overflow: hidden;
+}
+
+.menu li {
+  padding: 10px;
+  float:left; /* граница сайта */
+  list-style-type: none;
+}
+
+.menu li a {
+  font: 27px "Times New Roman", serif;
+  color: #bcbcbc;
+  text-decoration: none;
+}
+
+.main {
+  /* для старых браузеров */
+  /*padding-top: 80px;*/
+  background-color: #ccc;
+  flex-grow: 1;
+  /*flex: 1 0 auto;*/
+}
+
+.footer {
+  height: 80px;
+  background-color: grey;
+  padding: 5px;
+}
+
+.footer p {
+  font: 20px "Times New Roman", serif;
+  color: #bcbcbc;
+  text-decoration: none;
+}

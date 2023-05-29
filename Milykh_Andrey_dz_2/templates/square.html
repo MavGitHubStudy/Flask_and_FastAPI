@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %} {{ title }} - square{% endblock %}
+{% block content %}
+  <h1>Вычисление квадрата введённого числа</h1>
+  <br><br>
+  <form method="post">
+    <label for="number">
+      Число
+      <input type="text" name="number" id="number"
+             placeholder="Введите число" required>
+    </label>
+    <input type="submit" value="Отправить">
+  </form>
+{% endblock %}
