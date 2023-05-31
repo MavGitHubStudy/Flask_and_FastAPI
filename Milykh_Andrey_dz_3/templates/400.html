@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <h1>{% block big_head %}{{ big_head }}{% endblock %}</h1>
+    <p>
+      <a href="{% block url %}{{ url }}{% endblock %}">
+        <br><br>Попробуйте повторить ввод.
+      </a>
+    </p>
+  </div>
+{% endblock %}

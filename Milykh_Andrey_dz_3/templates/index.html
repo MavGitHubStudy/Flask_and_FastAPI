@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %} {{title}} - Главная{% endblock %}
+{% block content %}
+  <h1>Главная</h1>
+  <br>
+  <div class="container">
+    {%  if title == 'task_02' %}
+      <a href="/books/">Список всех книг</a>
+    {%  elif title == 'task_05' %}
+      <a href="#">Форма регистрации для пользователя</a>
+    {% endif %}
+  </div>
+{% endblock %}
