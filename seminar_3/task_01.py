@@ -21,7 +21,7 @@ from flask import Flask, render_template
 from seminar_3.models_01 import db, Student, Faculty
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///university.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///../../instance/university.db'
 db.init_app(app)
 
 
@@ -61,6 +61,15 @@ def index():
         'title': 'task_01',
     }
     return render_template('index.html', **context)
+
+
+@app.route('/students/')
+def all_students():
+    students = Student.query.all()
+    context = {
+        'title': 'task_01',
+        'students': students}
+    return render_template('students.html', **context)
 
 
 @app.route('/about/')
