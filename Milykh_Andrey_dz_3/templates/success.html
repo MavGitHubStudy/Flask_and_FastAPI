@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}{{ title }} - Authenticated{% endblock %}
+{% block content %}
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        {{ message }}
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  <br><br>
+  <h2>User Authenticated</h2>
+{% endblock %}
