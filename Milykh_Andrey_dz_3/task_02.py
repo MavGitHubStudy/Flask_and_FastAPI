@@ -22,9 +22,10 @@ from Milykh_Andrey_dz_3.models_02 import db, Author, Book
 
 app = Flask(__name__)
 # Подсоединение к базе данных
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///library.db'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///../../instance/library.db'
-# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+print(app)
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///task_02.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///../../instance/task_02.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
 
